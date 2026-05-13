@@ -1,0 +1,17 @@
+Task Description:
+
+Create a file with .txt extension (/home/demo.txt). Change the permission set of that file, so that any user can read it, group can read/write & owner can read/write/execute it.
+===================================================================================================
+
+
+#!/bin/bash
+
+set -e
+
+echo "permission testing task" | sudo tee -a /home/demo.txt
+
+echo "file created"
+
+sudo chmod 764 /home/demo.txt   #owner(7)=> 4(r)+2(w)+1(X) , group(6)=> r(4)+w(2), others(4)=> 4(r)
+
+echo "permission updated"
